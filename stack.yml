@@ -1,0 +1,11 @@
+provider:
+  name: faas
+functions:
+  mfp-macros:
+    lang: python3-flask
+    handler: ./mfp-macros
+    image: kamaln7/mfp-macros:latest
+    secrets:
+      - mfp-macros
+    environment:
+      USERNAME: kamaln7
