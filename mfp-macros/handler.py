@@ -13,5 +13,7 @@ def handle(req):
         netcarbs = totals['carbohydrates'] - totals['fiber']
 
         return "{}g net carbs today. {}g total carbs, {}g fiber".format(netcarbs, totals['carbohydrates'], totals['fiber'])
+    except KeyError:
+        return "no food logged today yet"
     except Exception as e:
-        return "error: {}".format(e.message)
+        return "error: {}".format(e)
